@@ -4,11 +4,11 @@
 const container = document.getElementById('container');
 
 function createColumns(number) {
-    for(i=0; i < number; i++) {
-        let column = document.createElement('div');
-        column.className = 'columns';
-        column.textContent = i;
-        console.log(column)
-        container.appendChild(column)
+    const gridSize = number**2;
+    for(i=0; i < gridSize; i++) {
+        let square = document.createElement('div');
+        square.className = 'square';
+        square.textContent = '*';
+        container.appendChild(square);
     }
 }
