@@ -2,8 +2,16 @@
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
+    border: solid 1px #000;
+    width: 800px;
+    height: 800px;
+    justify-self: end;
 }
 .square {
     display: grid;
-    border: 1px solid #ddd;
+}
+
+.active {
+    display: grid;
+    background-color: #000;
 }
