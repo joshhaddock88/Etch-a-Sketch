@@ -2,7 +2,8 @@
 // takes single number input
 //for each number create a div
 const container = document.getElementById('container');
-const gridSize = document.getElementById('gridSize').value;
+const submitBtn = document.getElementById('submitBtn');
+const root = document.querySelector(':root');
 
 function createGrid(number) {
     const newGrid = number**2;
@@ -15,14 +16,23 @@ function createGrid(number) {
         container.appendChild(square);
     }
 }
-function removeGrid() {
-    container.innerHTML = '';
-}
+
+submitBtn.addEventListener('click', () => {
+    const gridSize = document.getElementById('gridSize').value;
+    console.log(gridSize);
+    if(gridSize > 0 && gridSize < 101) {
+        container.innerHTML = '';
+        console.log(container.children);
+        container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+        createGrid(gridSize);
+    } else {
+        alert('Please choose valid number');
+    }
+})
 
 window.onload = createGrid(16);
 
-
-const submitBtn = document.getElementById('submitBtn');
 
 //for submit button, on click, 
 //change container.style.gridTemplateColums/Rows = gridSize value
