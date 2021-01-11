@@ -2,22 +2,27 @@
 // takes single number input
 //for each number create a div
 const container = document.getElementById('container');
+const gridSize = document.getElementById('gridSize').value;
 
 function createGrid(number) {
-    const gridSize = number**2;
-    for(i=0; i < gridSize; i++) {
+    const newGrid = number**2;
+    for(i=0; i < newGrid; i++) {
         let square = document.createElement('div');
         square.className = 'square';
+        square.addEventListener("mouseover", function() {
+            this.className += ' active';
+        });
         container.appendChild(square);
     }
 }
-window.onload = createGrid(35);
-
-
-const squares = container.getElementsByClassName('square');
-
-for(i = 0; i < squares.length; i++) {
-    squares[i].addEventListener("mouseover", function() {
-        this.className += ' active';
-    });
+function removeGrid() {
+    container.innerHTML = '';
 }
+
+window.onload = createGrid(16);
+
+
+const submitBtn = document.getElementById('submitBtn');
+
+//for submit button, on click, 
+//change container.style.gridTemplateColums/Rows = gridSize value
