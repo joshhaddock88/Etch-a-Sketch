@@ -3,7 +3,18 @@
 //for each number create a div
 const container = document.getElementById('container');
 const submitBtn = document.getElementById('submitBtn');
-const form = document.getElementById('form');
+const clear = document.getElementById('clear');
+const black = document.getElementById('black');
+const rainbow = document.getElementById('rainbow');
+const greyscale = document.getElementById('greyscale');
+const eraser = document.getElementById('eraser');
+
+function randomRGB() {
+    const randomNumber = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+    const r = randomNumber(0, 255);
+    return r;
+}
+
 
 function createGrid(number) {
     const newGrid = number**2;
@@ -11,7 +22,16 @@ function createGrid(number) {
         let square = document.createElement('div');
         square.className = 'square';
         square.addEventListener("mouseover", function() {
-            this.className += ' active';
+            if(black.checked) {
+                square.style.backgroundColor = 'black';
+            } else if (rainbow.checked) {
+                square.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+            } else if (greyscale.checked) {
+                square.style.opacity = Number(square.style.opacity) + 0.1 + '';
+                square.style.backgroundColor = 'black';
+            } else if (eraser.checked) {
+                square.style.backgroundColor = 'white';
+            }
         });
         container.appendChild(square);
     }
@@ -30,5 +50,10 @@ function startNewGrid() {
 }
 submitBtn.addEventListener('click', startNewGrid)
 
+clear.addEventListener('click', function() {
+    for(i=0; i < container.children.length; i++) {
+        container.children[i].style.backgroundColor = 'white';
+    }
+})
 
 window.onload = createGrid(16);

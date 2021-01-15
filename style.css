@@ -1,11 +1,26 @@
+html {
+    display: flex;
+}
 #container{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     border: solid 1px #000;
-    width: 800px;
-    height: 800px;
+    width: 900px;
+    height: 900px;
     justify-self: end;
+    margin-left: auto;
+    margin-right: 7%;
+    order: ;
+}
+.submitForm {
+    display: flex;
+}
+#gridSize {
+    
+}
+#submitBtn {
+    display: flex;
 }
 .square {
     display: grid;
@@ -15,3 +30,4 @@
     display: grid;
     background-color: #000;
 }
+
