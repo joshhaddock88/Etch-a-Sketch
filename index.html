@@ -6,23 +6,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-    
-    </div>
-    <div class="submitForm">
-        <input id="gridSize" type="text" placeholder="Grid size: 1-100">
-        <button id="submitBtn" type="button">Submit</button>
-        <button id="clear" type="button">Clear</button>
-    </div>
-    <div>
-        <input name="choices" type="radio" class="colorChoices" id="black" checked="checked">
-        <label for="black">Black</label>
-        <input name="choices" type="radio" class="colorChoices" id="rainbow">
-        <label for="rainbow">Rainbow</label>
-        <input name="choices" type="radio" class="colorChoices" id="greyscale">
-        <label for="greyscale">Greyscale</label>
-        <input name="choices" type="radio" class="colorChoices" id="eraser">
-        <label for="eraser">Eraser</label>
+    <div class="grid">
+        <h1>Etch-a-Sketch</h1>
+        <div id="container">
+        
+        </div>
+        <div class=instructions>
+            Welcome! This is my etch-a-sketch. Choose the number of pixels in your block 
+            and what tool you'd like to draw with, then create by simply moving your curser across the square.
+            Enjoy!
+        </div>
+        <div class="submitForm">
+            <input id="gridSize" type="text" placeholder="Pixel size: 1-100">
+            <button id="submitBtn" type="button">Submit</button>
+            <button id="clear" type="button">Clear</button>
+            <input name="choices" type="radio" class="colorChoices" id="black" checked="checked">
+            <label for="black">Black</label>
+            <input name="choices" type="radio" class="colorChoices" id="rainbow">
+            <label for="rainbow">Rainbow</label>
+            <input name="choices" type="radio" class="colorChoices" id="greyscale">
+            <label for="greyscale">Greyscale</label>
+            <input name="choices" type="radio" class="colorChoices" id="eraser">
+            <label for="eraser">Eraser</label>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
